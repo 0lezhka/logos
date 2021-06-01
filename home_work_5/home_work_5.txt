@@ -1,0 +1,3 @@
+select title, price, genre.name as genre, author.name, author.surname from book
+join genre on genre_id = genre.id
+join author on author_id = author.id;
