@@ -1,0 +1,49 @@
+
+select * from book;
+
+update book
+Set surname = 'author'
+limit 2;
+
+select count(rewards) from book;
+
+select * from book
+where pages = (select min(pages) from book);
+
+select max(pages) as max_pages from book;
+
+select avg(price) from book;
+
+select sum(price) from book
+where category = 'Психологія';
+
+select min(price) from book;
+
+select * from book
+where price = (select min(price) from book);
+
+select * from book
+where description like '%sc';
+
+select * from book
+where author like 'au%';
+
+select * from book
+where category like '%оло%';
+
+select * from book
+where price between 50 and 120;
+
+select * from book
+where price > 200 and price < 600;
+
+delete from book
+where id = 1;
+
+delete from book
+where name = 'name';
+
+delete from book
+where isbn = 12324;
+
+
