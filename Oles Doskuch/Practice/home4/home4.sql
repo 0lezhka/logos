@@ -1,21 +1,22 @@
-create database  home3;
-use home3;
+create database  home4;
+use home4;
+
+
+create table book_genre(
+book_ganre_id int  primary key  not null,
+name varchar(20)
+);
 
 
 
 create table book(
 book_id int not null primary key,
-description varchar(100),
-price int
-
+description varchar(80),
+price int,
+id_book_genre int,
+foreign key(id_book_genre)references book_genre(book_ganre_id)
 );
 
-create table book_genre(
-book_ganre_id int  primary key  not null,
-name varchar(20),
-book_id int,
-foreign key(book_id) references book(book_id)
-);
 
 
 
@@ -29,6 +30,8 @@ date_author date
 );
 
 
+
+
 create table authot_book(
 id_author int not null ,
 id_book int not null,
@@ -37,8 +40,4 @@ foreign key(id_author) references author(id_author),
 foreign key(id_book) references book(book_id)
 
 );
-
-
-
-
 
